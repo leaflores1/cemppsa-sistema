@@ -12,6 +12,8 @@ class ReadingIn(BaseModel):
     measured_at: datetime
     notes: Optional[str] = None
 
+
+
 class SyncBatchIn(BaseModel):
     batch_uuid: UUID
     device_id: str
@@ -25,6 +27,8 @@ class SyncBatchIn(BaseModel):
         if not v:
             raise ValueError("Debe contener al menos una lectura")
         return v
+
+
 
 class RowStatus(BaseModel):
     client_row_id: int
