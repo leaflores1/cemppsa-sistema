@@ -4,68 +4,92 @@ import HeroWaterSvg from "../lib/heroWaterSvg";
 function HeroInicio() {
   return (
     <>
-      {/* TEXTO */}
-      <div className="space-y-4">
+      {/* LADO IZQUIERDO */}
+      <div className="space-y-6 text-white">
         
-        <p className="pill bg-emerald-50 text-emerald-700 inline-flex items-center gap-2">
-          <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-          Monitoreo, Análisis, Reportes, Consola CEMPPSA
-        </p>
+        {/* Labels */}
+        <div className="flex gap-2">
+          <span className="text-xs px-3 py-1 rounded-full bg-emerald-600/20 text-emerald-300 border border-emerald-600/20">
+            TIEMPO REAL
+          </span>
+          <span className="text-xs px-3 py-1 rounded-full bg-blue-600/20 text-blue-300 border border-blue-600/20">
+            TRAZABILIDAD
+          </span>
+          <span className="text-xs px-3 py-1 rounded-full bg-indigo-600/20 text-indigo-300 border border-indigo-600/20">
+            SEGURIDAD
+          </span>
+        </div>
 
-        <h2 className="text-2xl md:text-3xl font-semibold leading-tight">
-          Consola de Auscultación de Presa Potrerillos
+        {/* Título */}
+        <h2 className="text-3xl md:text-4xl font-semibold leading-tight text-white">
+          Centro de Control de Auscultación
         </h2>
 
-        <p className="text-slate-600 max-w-xl">
-          Desde esta consola podés seguir el estado de la auscultación,
-          validar planillas, monitorear la ingesta de datos y preparar
-          reportes para ORSEP y para la operación diaria.
+        {/* Descripción */}
+        <p className="text-slate-300 max-w-xl">
+          Todo el sistema en una vista: fuentes, estado, alarmas y accesos rápidos. 
+          Empezá por la <strong className="text-white">Consola</strong> o explorá los módulos.
         </p>
 
-        {/* QUICK ACTION BUTTONS */}
+        {/* BOTONES */}
         <div className="mt-6 flex flex-wrap gap-3">
-          <a href="#consola" className="px-4 py-2.5 rounded-xl bg-slate-900 text-slate-50 font-medium hover:bg-slate-800">
+          <a
+            href="#consola"
+            className="px-4 py-2.5 rounded-xl bg-white text-slate-900 font-medium hover:bg-slate-100 shadow"
+          >
             Ir a Consola
           </a>
-          <a href="#bandeja" className="px-4 py-2.5 rounded-xl bg-slate-800 text-slate-50 hover:bg-slate-700">
+          <a
+            href="#bandeja"
+            className="px-4 py-2.5 rounded-xl bg-slate-800/70 text-white hover:bg-slate-700/80 border border-white/10"
+          >
             Bandeja
           </a>
-          <a href="#fuentes" className="px-4 py-2.5 rounded-xl bg-slate-800 text-slate-50 hover:bg-slate-700">
+          <a
+            href="#fuentes"
+            className="px-4 py-2.5 rounded-xl bg-slate-800/70 text-white hover:bg-slate-700/80 border border-white/10"
+          >
             Fuentes
           </a>
-          <a href="#consultas" className="px-4 py-2.5 rounded-xl bg-slate-800 text-slate-50 hover:bg-slate-700">
+          <a
+            href="#consultas"
+            className="px-4 py-2.5 rounded-xl bg-slate-800/70 text-white hover:bg-slate-700/80 border border-white/10"
+          >
             Consultas
           </a>
         </div>
 
-        {/* KPI CARDS */}
-        <div className="mt-6 grid grid-cols-3 gap-3 max-w-md text-xs">
+        {/* KPIs (versión original) */}
+        <div className="mt-8 grid grid-cols-4 gap-4 text-xs">
+          <div className="bg-white/5 border border-white/10 rounded-2xl p-4">
+            <p className="uppercase text-slate-300">Pendientes</p>
+            <p className="text-lg font-semibold text-white">2</p>
+            <p className="text-slate-400">1 planilla · 1 dura</p>
+          </div>
           
-          <div className="bg-white border rounded-2xl p-3 shadow-sm">
-            <p className="text-slate-500 uppercase">Nivel embalse</p>
-            <p className="text-lg font-semibold">1368.4 msnm</p>
-            <p className="text-emerald-600">+0.2 m vs ayer</p>
+          <div className="bg-white/5 border border-white/10 rounded-2xl p-4">
+            <p className="uppercase text-slate-300">Cambios en Silver</p>
+            <p className="text-lg font-semibold text-white">3</p>
+            <p className="text-slate-400">sin publicar</p>
           </div>
 
-          <div className="bg-white border rounded-2xl p-3 shadow-sm">
-            <p className="text-slate-500 uppercase">Planillas mes</p>
-            <p className="text-lg font-semibold">48</p>
-            <p className="text-slate-500">4 con observaciones</p>
+          <div className="bg-white/5 border border-white/10 rounded-2xl p-4">
+            <p className="uppercase text-slate-300">Últimos datos</p>
+            <p className="text-lg font-semibold text-white">09:58</p>
+            <p className="text-slate-400">cada 2 h</p>
           </div>
 
-          <div className="bg-white border rounded-2xl p-3 shadow-sm">
-            <p className="text-slate-500 uppercase">Watchers</p>
-            <p className="text-lg font-semibold">5 activos</p>
-            <p className="text-emerald-600">OK</p>
+          <div className="bg-white/5 border border-white/10 rounded-2xl p-4">
+            <p className="uppercase text-slate-300">Embalse</p>
+            <p className="text-lg font-semibold text-white">1335.4 m</p>
+            <p className="text-emerald-300">+0.2 m</p>
           </div>
-
         </div>
       </div>
 
-      {/* SVG */}
+      {/* LADO DERECHO — CÍRCULO */}
       <div className="relative grid place-items-center">
-        <div className="relative h-64 w-64 lg:h-72 lg:w-72">
-          <div className="absolute inset-0 rounded-full bg-white/5 backdrop-blur-sm border border-white/10" />
+        <div className="relative h-72 w-72">
           <HeroWaterSvg />
         </div>
       </div>
