@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Copiamos tu CSS custom del <style> original */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animaciones suaves para el hero */
+@keyframes spin-slow {
+  from { transform: rotate(0deg) }
+  to   { transform: rotate(360deg) }
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0) }
+  50%     { transform: translateY(-6px) }
+}
+
+@keyframes shimmer {
+  0%   { background-position: 0% 50% }
+  100% { background-position: 200% 50% }
+}
+
+@keyframes wave {
+  from { transform: translateX(0) }
+  to   { transform: translateX(-120px) }
+}
+
+@keyframes waveX {
+  from { transform: translateX(0) }
+  to   { transform: translateX(-180px) }
+}
+
+/* Parallax agua */
+.water-y { animation: float 6s ease-in-out infinite }
+.wave-x1 { animation: waveX 7s linear infinite }
+.wave-x2 { animation: waveX 11s linear infinite }
+
+.hero-ring {
+  background: conic-gradient(from 180deg at 50% 50%, #0ea5e9, #22c55e, #a78bfa, #0ea5e9);
+  animation: spin-slow 14s linear infinite;
+  filter: blur(0.5px);
+}
+
+.hero-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0.0),
+    rgba(255,255,255,0.35),
+    rgba(255,255,255,0.0)
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+  mask-image: radial-gradient(closest-side, black 60%, transparent 100%);
+}
+
+/* Botones y menús del header */
+.navbtn {
+  padding: .375rem .75rem;
+  border-radius: .5rem;
+}
+.navbtn:hover { background: #f1f5f9 }
+
+.menu {
+  position: absolute;
+  background: #fff;
+  border: 1px solid rgba(148, 163, 184, .7);
+  border-radius: .75rem;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, .16);
+  margin-top: .25rem;
+  min-width: 220px;
+  padding: .25rem;
+  z-index: 50;
+}
+.menu a {
+  display: block;
+  padding: .5rem .75rem;
+  border-radius: .5rem;
+  font-size: .9rem;
+}
+.menu a:hover { background: #f8fafc }
+
+details[open] summary {
+  background: #f1f5f9;
+  border-radius: .5rem;
+}
+
+.pill {
+  font-size: .7rem;
+  padding: .15rem .45rem;
+  border-radius: 999px;
+}
+
+/* Animaciones estables y sin acumulación */
+.hero-water .tile {
+  animation: waveSlide 8s linear infinite;
+  will-change: transform;
+  transform: translateZ(0);
+  shape-rendering: geometricPrecision;
+}
+.hero-water .tile.slow {
+  animation-duration: 12s;
+}
+
+/* Bucle perfecto: de 0 a -240px (igual al viewBox) */
+@keyframes waveSlide {
+  from { transform: translateX(0) }
+  to   { transform: translateX(-240px) }
+}
+
+/* Flotación vertical suave del nivel (opcional) */
+#slosh {
+  animation: bob 6s ease-in-out infinite;
+  will-change: transform;
+}
+@keyframes bob {
+  0%,100% { transform: translateY(140px) }
+  50%     { transform: translateY(136px) }
+}
