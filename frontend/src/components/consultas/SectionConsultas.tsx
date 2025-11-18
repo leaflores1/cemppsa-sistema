@@ -1,10 +1,7 @@
-import React from "react";
 
 function SectionConsultas() {
   return (
     <div className="space-y-6">
-      <h2 className="text-lg font-semibold">Consultas</h2>
-
       <p className="text-sm text-slate-600 max-w-3xl">
         Consultá datos de la capa Silver o Gold, realizá pruebas rápidas sobre el
         API, descargá resultados en CSV y generá consultas filtradas por

@@ -1,10 +1,7 @@
-import React from "react";
 
 function SectionFuentes() {
   return (
     <div className="space-y-6">
-      <h2 className="text-lg font-semibold">Fuentes</h2>
-
       <p className="text-sm text-slate-600 max-w-3xl">
         Todas las fuentes de ingesta del sistema: dispositivos automáticos,
         planillas cargadas manualmente, watchers que monitorean directorios

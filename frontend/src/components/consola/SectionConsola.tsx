@@ -1,10 +1,8 @@
-import React from "react";
 
 function SectionConsola() {
   return (
     <div className="space-y-6">
-      <h2 className="text-lg font-semibold">Consola</h2>
-
+  
       {/* GRID PRINCIPAL */}
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
         

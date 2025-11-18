@@ -1,10 +1,7 @@
-import React from "react";
-
 function SectionPublicar() {
   return (
     <div className="space-y-6">
-      <h2 className="text-lg font-semibold">Publicar &amp; Reportes (Gold)</h2>
-
+ 
       <p className="text-sm text-slate-600 max-w-3xl">
         Desde aquí se publican los datos validados de la capa Silver hacia la
         capa Gold, se generan reportes periódicos y se preparan salidas para

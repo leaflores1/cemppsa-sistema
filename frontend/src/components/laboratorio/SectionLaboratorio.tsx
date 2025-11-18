@@ -1,9 +1,7 @@
-import React from "react";
 
 function SectionLaboratorio() {
   return (
     <div className="space-y-6">
-      <h2 className="text-lg font-semibold">Laboratorio (Silver)</h2>
 
       <p className="text-sm text-slate-600 max-w-3xl">
         Aquí podés probar transformaciones de la capa Silver antes de publicar
