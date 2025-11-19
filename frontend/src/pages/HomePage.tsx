@@ -11,14 +11,14 @@ export default function HomePage() {
                 className="
                   relative 
                   overflow-hidden 
-                  rounded-[2.5rem] 
+                  rounded-[2rem] 
                   bg-gradient-to-br 
                   from-[#0f1a2b] 
                   via-[#0f1e33] 
                   to-[#1b2538]
                   text-white
                   shadow-xl">
-                <div className="max-w-7xl mx-auto px-6 py-16 grid lg:grid-cols-[1.2fr_1fr] gap-10 items-center">
+                <div className="max-w-7xl mx-auto px-8 py-16 grid lg:grid-cols-[1.2fr_1fr] gap-10 items-center">
                   <HeroInicio />
                 </div>
 

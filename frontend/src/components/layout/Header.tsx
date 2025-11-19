@@ -5,15 +5,20 @@ function Header() {
 
   return (
     <header className="border-b bg-white/90 backdrop-blur sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
+      <div className="max-w-7xl mx-auto px-4 py-1 flex items-center justify-between gap-4">
         
         {/* LOGO / TÍTULO */}
         <div className="flex items-center gap-3">
-          <div className="h-9 w-9 grid place-items-center rounded-xl bg-slate-900 text-white">
-            <span className="text-xs font-bold">C</span>
+
+          <div className="h-15 w-15 grid place-items-center rounded-xl">
+            <img
+                src="/cemppsa_logo.png"
+                alt="Logo CEMPPSA"
+                className="h-14 w-auto object-contain"
+              />
           </div>
           <h1 className="text-lg font-semibold">
-            CEMPPSA · Consola de Auscultación
+            Consola de Auscultación
           </h1>
         </div>
 

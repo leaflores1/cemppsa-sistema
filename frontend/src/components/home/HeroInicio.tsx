@@ -9,7 +9,7 @@ function HeroInicio() {
   return (
     <>
       {/* LADO IZQUIERDO */}
-      <div className="space-y-6 text-white">
+      <div className="space-y-8 text-white">
 
         <h2 className="text-3xl md:text-4xl font-semibold leading-tight text-white">
           Control de Auscultación
