@@ -17,6 +17,7 @@ import MapaPage from './pages/visualizacion/MapaPage';
 import FotosPage from './pages/visualizacion/FotosPage';
 import SaludPage from './pages/visualizacion/SaludPage';
 
+
 function App() {
   return (
     <BrowserRouter>
@@ -29,7 +30,9 @@ function App() {
         <Route path="/laboratorio" element={<MainLayout><LaboratorioPage /></MainLayout>} />
         <Route path="/publicar" element={<MainLayout><PublicarPage /></MainLayout>} />
         <Route path="/configuracion" element={<MainLayout><ConfiguracionPage /></MainLayout>} />
-        
+
+
+
         {/* Visualización */}
         <Route path="/visualizacion/mapa" element={<MainLayout><MapaPage /></MainLayout>} />
         <Route path="/visualizacion/fotos" element={<MainLayout><FotosPage /></MainLayout>} />

@@ -38,7 +38,6 @@ const HeroWaterSvg = () => (
 
     {/* Water */}
     <g clipPath="url(#clipCircle)">
-      {/* Moving waves */}
       <g id="slosh" transform="translate(0, 110)">
         <g className="tile">
           <use href="#wave" fill="#38bdf8" opacity=".5" />
