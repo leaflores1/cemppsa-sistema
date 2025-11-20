@@ -6,6 +6,6 @@ from app.services.sync_service import save_batch
 
 router = APIRouter()
 
-@router.post("/sync", response_model=SyncBatchOut)
+@router.post("", response_model=SyncBatchOut)
 def sync(batch: SyncBatchIn, db: Session = Depends(get_db)):
     return save_batch(db, batch)

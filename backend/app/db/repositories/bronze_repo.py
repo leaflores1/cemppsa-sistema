@@ -1,27 +1,35 @@
 from sqlalchemy.orm import Session
-from datetime import datetime, timezone
-from app.db.models.bronze import FileRegistry, ReadingRaw
+from app.db.models.bronze_planillas import BronzePlanilla
+from app.db.models.bronze_lectura_raw import BronzeLecturaRaw
 
-def get_file_registry_by_uuid(db: Session, batch_uuid: str):
-    return db.query(FileRegistry).filter(FileRegistry.batch_uuid==batch_uuid).one_or_none()
+class BronzeRepository:
 
-def insert_file_registry(db: Session, *, batch_uuid:str, device_id:str, technician_id:str, created_at:datetime, status:str, source:str="app"):
-    fr = FileRegistry(
-        batch_uuid=batch_uuid,
-        device_id=device_id,
-        technician_id=technician_id,
-        created_at=created_at,
-        server_received_at=datetime.now(timezone.utc),
-        status=status,
-        source=source
+    def crear_planilla(self, db: Session, batch_uuid: str, fuente: str):
+        planilla = BronzePlanilla(batch_uuid=batch_uuid, fuente=fuente)
+        db.add(planilla)
+        db.commit()
+        db.refresh(planilla)
+        return planilla
+
+    def agregar_lecturas(self, db: Session, planilla_id: int, lecturas: list):
+        rows = [
+            BronzeLecturaRaw(
+            batch_uuid = l["batch_uuid"],
+            client_row_id = l["client_row_id"],
+            instrument_code = l["instrument_code"],
+            parameter = l["parameter"],
+            unit = l["unit"],
+            value = l["value"],
+            measured_at = l["measured_at"],
+            notes = l.get("notes", None)
     )
-    db.add(fr)
-    db.flush()
-    return fr
+    for l in lecturas
+]
 
-def insert_reading_raw(db: Session, r: dict):
-    row = ReadingRaw(**r)
-    db.add(row)
 
-def commit(db: Session):
-    db.commit()
+        db.bulk_save_objects(rows)
+        db.commit()
+        return True
+
+    def listar_planillas(self, db: Session):
+        return db.query(BronzePlanilla).order_by(BronzePlanilla.creado_en.desc()).all()

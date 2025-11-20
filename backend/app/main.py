@@ -5,7 +5,7 @@ from app.core.cors import setup_cors
 
 app = FastAPI(title="CEMPPSA API")
 setup_cors(app)
-app.include_router(api_router)
+app.include_router(api_router, prefix="/api/v1")
 
 # healthcheck simple
 @app.get("/health")

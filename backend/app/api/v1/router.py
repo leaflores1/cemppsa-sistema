@@ -1,9 +1,12 @@
 from fastapi import APIRouter
-from .endpoints import sync, catalog, batches
+from app.api.v1.endpoints import batches, catalog, sync, silver, gold
 
-api_router = APIRouter(prefix="/api/v1")
+api_router = APIRouter()
 
-# Incluir los routers de cada módulo
-api_router.include_router(sync.router, tags=["sync"])
-api_router.include_router(catalog.router, tags=["catalog"])
-api_router.include_router(batches.router, tags=["batches"])
+api_router.include_router(batches.router, prefix="/batches", tags=["Batches"])
+api_router.include_router(catalog.router, prefix="/catalog", tags=["Catalog"])
+api_router.include_router(sync.router, prefix="/sync", tags=["Sync"])
+
+
+api_router.include_router(silver.router)
+api_router.include_router(gold.router)
