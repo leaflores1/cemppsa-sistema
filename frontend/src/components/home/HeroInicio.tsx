@@ -12,12 +12,11 @@ function HeroInicio() {
       <div className="space-y-8 text-white">
 
         <h2 className="text-3xl md:text-4xl font-semibold leading-tight text-white">
-          Control de Auscultación
+          Consola de Auscultación
         </h2>
 
         <p className="text-slate-300 max-w-xl">
           Todo el sistema en una vista: fuentes, estado, alarmas y accesos rápidos. 
-          Empezá por la <strong className="text-white">Consola</strong> o explorá los módulos.
         </p>
 
         {/* BOTONES */}

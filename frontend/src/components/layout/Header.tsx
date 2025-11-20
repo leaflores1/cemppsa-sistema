@@ -5,7 +5,7 @@ function Header() {
 
   return (
     <header className="border-b bg-white/90 backdrop-blur sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 py-1 flex items-center justify-between gap-4">
+      <div className="max-w-7xl mx-auto px-4 flex items-center justify-between gap-4">
         
         {/* LOGO / TÍTULO */}
         <div className="flex items-center gap-3">
@@ -17,9 +17,7 @@ function Header() {
                 className="h-14 w-auto object-contain"
               />
           </div>
-          <h1 className="text-lg font-semibold">
-            Consola de Auscultación
-          </h1>
+
         </div>
 
         {/* NAV DESKTOP */}
@@ -36,7 +34,7 @@ function Header() {
           {/* OPERACIONES */}
           <details className="relative">
             <summary className="cursor-pointer navbtn flex items-center gap-1">
-              Operaciones <span className="text-xs">▼</span>
+              Operaciones 
             </summary>
             <div className="menu">
               <a href="bandeja">Bandeja</a>
@@ -48,7 +46,7 @@ function Header() {
           {/* DATOS */}
           <details className="relative">
             <summary className="cursor-pointer navbtn flex items-center gap-1">
-              Datos <span className="text-xs">▼</span>
+              Datos 
             </summary>
             <div className="menu">
               <a href="fuentes">Fuentes & Watchers</a>
@@ -59,7 +57,7 @@ function Header() {
           {/* SALUD */}
           <details className="relative">
             <summary className="cursor-pointer navbtn flex items-center gap-1">
-              Salud <span className="text-xs">▼</span>
+              Salud 
             </summary>
             <div className="menu">
               <a href="salud">Salud (futuro)</a>
@@ -69,7 +67,7 @@ function Header() {
           {/* CONFIG */}
           <details className="relative">
             <summary className="cursor-pointer navbtn flex items-center gap-1">
-              Configuración <span className="text-xs">▼</span>
+              Configuración 
             </summary>
             <div className="menu">
               <a href="config">Catálogos</a>
