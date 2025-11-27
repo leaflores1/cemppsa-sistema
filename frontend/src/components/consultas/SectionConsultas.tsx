@@ -1,3 +1,4 @@
+/* frontend/src/components/consultas/SectionConsultas*/
 
 function SectionConsultas() {
   return (

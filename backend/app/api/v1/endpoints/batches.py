@@ -6,10 +6,10 @@ from app.services.bronze_service import BronzeService
 router = APIRouter()
 bronze_service = BronzeService()
 
-@router.post("/")
+@router.post("")
 def recibir_desde_app(payload: dict, db: Session = Depends(get_db)):
     return bronze_service.recibir_planilla(db, payload)
 
-@router.get("/")
+@router.get("")
 def listar_para_consola(db: Session = Depends(get_db)):
     return bronze_service.obtener_bandeja(db)

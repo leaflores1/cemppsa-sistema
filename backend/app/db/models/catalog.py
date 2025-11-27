@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String
 from app.db.base import Base
 
-class CatalogInstrument(Base):
+class CatalogInstrumento(Base):
     __tablename__ = "catalog_instruments"
     id = Column(Integer, primary_key=True)
     instrument_code = Column(String(50), unique=True, nullable=False)
